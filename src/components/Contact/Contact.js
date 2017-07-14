@@ -3,54 +3,44 @@ import Paper from 'material-ui/Paper';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 
-const style = {
-    width: '40%',
-    margin: '20px auto',
-    padding: 20
-};
-
-const fieldStyle = {
-    width: '100%'
-};
+import './Contact.css';
 
 class Contact extends React.Component {
     render () {
         return (
-            <div>
-                <Paper style={style}>
+            <Paper className="Contact-container">
+                <div>
+                    <h3>Форма отправления сообщения</h3>
+                </div>
+                <div>
                     <div>
-                        <h3>Форма отправления сообщения</h3>
+                        <TextField
+                            className="Contact-fields"
+                            floatingLabelText="Ваше имя"
+                            type="text"
+                        />
                     </div>
                     <div>
-                        <div>
-                            <TextField
-                                style={fieldStyle}
-                                floatingLabelText="Ваше имя"
-                                type="text"
-                            />
-                        </div>
-                        <div>
-                            <TextField
-                                style={fieldStyle}
-                                floatingLabelText="Ваш email"
-                                type="email"
-                            />
-                        </div>
-                        <div>
-                            <TextField
-                                style={fieldStyle}
-                                floatingLabelText="Текст сообщения"
-                                type="text"
-                                multiLine={true}
-                                rows={1}
-                            />
-                        </div>
+                        <TextField
+                            className="Contact-fields"
+                            floatingLabelText="Ваш email"
+                            type="email"
+                        />
                     </div>
                     <div>
-                        <RaisedButton label="Отправить" fullWidth={true} />
+                        <TextField
+                            className="Contact-fields"
+                            floatingLabelText="Текст сообщения"
+                            type="text"
+                            multiLine={true}
+                            rows={1}
+                        />
                     </div>
-                </Paper>
-            </div>
+                </div>
+                <div>
+                    <RaisedButton label="Отправить" fullWidth={true} />
+                </div>
+            </Paper>
         );
     }
 }

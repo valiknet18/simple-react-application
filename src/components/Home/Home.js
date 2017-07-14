@@ -4,17 +4,10 @@ import logo from '../../logo.svg';
 
 import './Home.css';
 
-const style = {
-    width: '60%',
-    margin: '20px auto',
-    textAlign: 'center',
-    padding: 20
-};
-
 class Home extends Component {
     render () {
         return (
-            <Paper style={style}>
+            <Paper className="Home-container">
                 <div>
                     <div>
                         <h3>Добро пожаловать!</h3>

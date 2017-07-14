@@ -1,3 +1,10 @@
+.Home-container {
+    width: 60%;
+    margin: 20px auto;
+    text-align: center;
+    padding: 20px;
+}
+
 .Home-logo {
     animation: App-logo-spin infinite 20s linear;
     display: block;

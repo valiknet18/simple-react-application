@@ -1,0 +1,10 @@
+.Contact-container {
+    width: 40%;
+    margin: 20px auto;
+    padding: 20px;
+    display: block;
+}
+
+.Contact-fields {
+    width: 100% !important;
+}
