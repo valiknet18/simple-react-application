@@ -1,7 +1,4 @@
 import React from 'react';
-import logo from '../../../logo.svg';
-
-
 import AppBar from 'material-ui/AppBar';
 
 class Header extends React.Component {
@@ -13,7 +10,7 @@ class Header extends React.Component {
         return (
             <div>
                 <AppBar
-                    title="Title"
+                    title="Simple react application"
                     iconClassNameRight="muidocs-icon-navigation-expand-more"
                     onLeftIconButtonTouchTap={this.props.handleDrawer}
                 />

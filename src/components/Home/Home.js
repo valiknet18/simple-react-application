@@ -1,19 +1,32 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Paper from 'material-ui/Paper';
+import logo from '../../logo.svg';
+
+import './Home.css';
 
 const style = {
-    height: 100,
     width: '60%',
     margin: '20px auto',
     textAlign: 'center',
-    display: 'block',
+    padding: 20
 };
 
-class Home extends React.Component {
+class Home extends Component {
     render () {
         return (
-            <Paper style={style} zDepth={2}>
-                Hello i'm at home page
+            <Paper style={style}>
+                <div>
+                    <div>
+                        <h3>Добро пожаловать!</h3>
+                    </div>
+
+                    <div>
+                        <p>Это небольшое приложение служит для обучения работы с react.</p>
+                    </div>
+                    <div>
+                        <img src={logo} className="Home-logo" />
+                    </div>
+                </div>
             </Paper>
         );
     }

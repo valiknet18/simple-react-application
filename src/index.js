@@ -6,15 +6,21 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import { deepOrange900 } from 'material-ui/styles/colors';
 
 import App from './components/App/App.js';
 
 
 injectTapEventPlugin();
 
+const muiTheme = getMuiTheme({
+    palette: {
+        primary1Color: deepOrange900
+    }
+});
 
 const app = (
-    <MuiThemeProvider muiTheme={getMuiTheme()}>
+    <MuiThemeProvider muiTheme={muiTheme}>
         <BrowserRouter>
             <Route component={App} path="/" />
         </BrowserRouter>

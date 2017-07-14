@@ -12,23 +12,25 @@ const iconStyles = {
     cursor: 'pointer'
 };
 
+const menuStyles = {};
+
 class LeftMenu extends Component {
     render () {
         const closeIcon = <FontIcon style={iconStyles} className="material-icons">close</FontIcon>;
 
         return (
             <div>
-                <Drawer width={250} docked={true} open={this.props.open}>
+                <Drawer width={250} style={menuStyles} zDepth={3} open={this.props.open}>
                     <AppBar
                         iconElementLeft={closeIcon}
                         onLeftIconButtonTouchTap={this.props.handleDrawer}
                     />
                     <List>
                         <Link to="/">
-                            <ListItem primaryText="Home"/>
+                            <ListItem primaryText="Главная" />
                         </Link>
                         <Link to="/contact">
-                            <ListItem primaryText="Contact"/>
+                            <ListItem primaryText="Контактная форма" />
                         </Link>
                     </List>
                 </Drawer>
