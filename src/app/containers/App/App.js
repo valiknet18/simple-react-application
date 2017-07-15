@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Route} from 'react-router-dom';
 import Home from '../../components/Home/Home';
 import Contact from '../../components/Contact/Contact';
+import Calendar from '../../components/Calendar/Calendar';
 import Header from '../../../shared/components/Header/Header';
 import LeftMenu from '../../../shared/components/LeftMenu/LeftMenu';
 import Login from '../../../auth/components/Login/Login';
@@ -36,6 +37,7 @@ class App extends Component {
                         <Route component={Login} path="/login" />
                         <Route component={Registration} path="/registration" />
                         <Route component={Contact} path="/contact"/>
+                        <Route component={Calendar} path="/calendar" />
                     </div>
                 </div>
             </div>

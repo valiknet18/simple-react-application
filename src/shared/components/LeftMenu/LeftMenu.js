@@ -35,6 +35,9 @@ class LeftMenu extends Component {
                         <Link to="/registration">
                             <ListItem primaryText="Регистрация" />
                         </Link>
+                        <Link to="/calendar">
+                            <ListItem primaryText="Календарь" />
+                        </Link>
                         <Link to="/contact">
                             <ListItem primaryText="Контактная форма" />
                         </Link>
