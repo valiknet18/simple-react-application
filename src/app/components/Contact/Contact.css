@@ -3,6 +3,7 @@
     margin: 20px auto;
     padding: 20px;
     display: block;
+    min-width: 300px;
 }
 
 .Contact-fields {

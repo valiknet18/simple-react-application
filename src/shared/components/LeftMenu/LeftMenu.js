@@ -12,7 +12,7 @@ const iconStyles = {
     cursor: 'pointer'
 };
 
-const menuStyles = {};
+
 
 class LeftMenu extends Component {
     render () {
@@ -20,7 +20,7 @@ class LeftMenu extends Component {
 
         return (
             <div>
-                <Drawer width={250} style={menuStyles} zDepth={3} open={this.props.open}>
+                <Drawer width={250} zDepth={3} open={this.props.open}>
                     <AppBar
                         iconElementLeft={closeIcon}
                         onLeftIconButtonTouchTap={this.props.handleDrawer}
@@ -28,6 +28,12 @@ class LeftMenu extends Component {
                     <List>
                         <Link to="/">
                             <ListItem primaryText="Главная" />
+                        </Link>
+                        <Link to="/login">
+                            <ListItem primaryText="Логин" />
+                        </Link>
+                        <Link to="/registration">
+                            <ListItem primaryText="Регистрация" />
                         </Link>
                         <Link to="/contact">
                             <ListItem primaryText="Контактная форма" />

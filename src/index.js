@@ -1,15 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import registerServiceWorker from './registerServiceWorker';
 import { BrowserRouter, Route } from 'react-router-dom';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { deepOrange900 } from 'material-ui/styles/colors';
-
-import App from './components/App/App.js';
-
+import registerServiceWorker from './registerServiceWorker';
+import App from './app/containers/App/App.js';
+import './index.css';
 
 injectTapEventPlugin();
 
