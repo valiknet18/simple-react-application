@@ -8,6 +8,9 @@ import { deepOrange900 } from 'material-ui/styles/colors';
 import registerServiceWorker from './registerServiceWorker';
 import App from './app/containers/App/App.js';
 import './index.css';
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
+import configureStore from './shared/store/configureStore';
 
 injectTapEventPlugin();
 
@@ -17,12 +20,16 @@ const muiTheme = getMuiTheme({
     }
 });
 
+const store = configureStore();
+
 const app = (
-    <MuiThemeProvider muiTheme={muiTheme}>
-        <BrowserRouter>
-            <Route component={App} path="/" />
-        </BrowserRouter>
-    </MuiThemeProvider>
+    <Provider store={store}>
+        <MuiThemeProvider muiTheme={muiTheme}>
+            <BrowserRouter>
+                <Route component={App} path="/" />
+            </BrowserRouter>
+        </MuiThemeProvider>
+    </Provider>
 );
 
 ReactDOM.render(app, document.getElementById('root'));

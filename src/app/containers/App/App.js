@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
 import {Route} from 'react-router-dom';
 import Home from '../../components/Home/Home';
 import Contact from '../../components/Contact/Contact';
@@ -34,7 +35,7 @@ class App extends Component {
                     <LeftMenu open={this.state.open} handleDrawer={this.handleDrawer} />
                     <div>
                         <Route exact component={Home} path="/"/>
-                        <Route component={Login} path="/login" />
+                        <Route component={() => { return <Login {...this.props} /> }} path="/login" />
                         <Route component={Registration} path="/registration" />
                         <Route component={Contact} path="/contact"/>
                         <Route component={Calendar} path="/calendar" />
@@ -45,4 +46,14 @@ class App extends Component {
     }
 }
 
-export default App;
+function mapStateToProps(state) {
+    const { users } = state;
+
+    console.log(state);
+
+    return {
+        profile: users.profile
+    };
+}
+
+export default connect(mapStateToProps)(App);
