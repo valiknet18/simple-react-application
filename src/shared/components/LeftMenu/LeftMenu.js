@@ -17,6 +17,21 @@ const iconStyles = {
 class LeftMenu extends Component {
     render () {
         const closeIcon = <FontIcon style={iconStyles} className="material-icons">close</FontIcon>;
+        const unlogged = (
+            <div>
+                <Link to="/login">
+                    <ListItem primaryText="Логин"  />
+                </Link>
+                <Link to="/registration">
+                    <ListItem primaryText="Регистрация" />
+                </Link>
+            </div>
+        );
+        const calendar = (
+            <Link to="/calendar">
+                <ListItem primaryText="Календарь" />
+            </Link>
+        );
 
         return (
             <div>
@@ -29,15 +44,7 @@ class LeftMenu extends Component {
                         <Link to="/">
                             <ListItem primaryText="Главная" />
                         </Link>
-                        <Link to="/login">
-                            <ListItem primaryText="Логин" />
-                        </Link>
-                        <Link to="/registration">
-                            <ListItem primaryText="Регистрация" />
-                        </Link>
-                        <Link to="/calendar">
-                            <ListItem primaryText="Календарь" />
-                        </Link>
+                        {this.props.profile ? calendar : unlogged}
                         <Link to="/contact">
                             <ListItem primaryText="Контактная форма" />
                         </Link>

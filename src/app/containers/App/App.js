@@ -8,6 +8,7 @@ import Header from '../../../shared/components/Header/Header';
 import LeftMenu from '../../../shared/components/LeftMenu/LeftMenu';
 import Login from '../../../auth/components/Login/Login';
 import Registration from '../../../auth/components/Registration/Registration';
+import { getProfile } from '../../../auth/actions/users';
 
 import './App.scss';
 
@@ -21,6 +22,12 @@ class App extends Component {
         this.handleDrawer = this.handleDrawer.bind(this);
     }
 
+    componentDidMount() {
+        const { dispatch } = this.props;
+
+        dispatch(getProfile());
+    }
+
     handleDrawer() {
         this.setState({
             open: !this.state.open
@@ -32,7 +39,7 @@ class App extends Component {
             <div className="App">
                 <Header handleDrawer={this.handleDrawer} />
                 <div>
-                    <LeftMenu open={this.state.open} handleDrawer={this.handleDrawer} />
+                    <LeftMenu {...this.props} open={this.state.open} handleDrawer={this.handleDrawer} />
                     <div>
                         <Route exact component={Home} path="/"/>
                         <Route component={() => { return <Login {...this.props} /> }} path="/login" />
@@ -48,8 +55,6 @@ class App extends Component {
 
 function mapStateToProps(state) {
     const { users } = state;
-
-    console.log(state);
 
     return {
         profile: users.profile
