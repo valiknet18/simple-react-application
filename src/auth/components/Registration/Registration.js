@@ -1,48 +1,25 @@
 import React, { Component } from 'react';
 import Paper from 'material-ui/Paper';
-import TextField from 'material-ui/TextField';
-import RaisedButton from 'material-ui/RaisedButton';
+import RegistrationForm from '../RegistrationForm/RegistrationForm';
 
 class Registration extends Component {
+    constructor(props) {
+        super(props);
+
+        this.handleSave = this.handleSave.bind(this);
+    }
+
+    handleSave(form) {
+        console.log(form);
+    }
+
     render() {
         return (
             <Paper className="Login-container">
                 <div>
                     <h3>Форма регистрации</h3>
                 </div>
-                <div>
-                    <div>
-                        <TextField
-                            className="Contact-fields"
-                            floatingLabelText="Ваше имя"
-                            type="text"
-                        />
-                    </div>
-                    <div>
-                        <TextField
-                            className="Contact-fields"
-                            floatingLabelText="Ваш username"
-                            type="text"
-                        />
-                    </div>
-                    <div>
-                        <TextField
-                            className="Contact-fields"
-                            floatingLabelText="Ваш email"
-                            type="email"
-                        />
-                    </div>
-                    <div>
-                        <TextField
-                            className="Contact-fields"
-                            floatingLabelText="Ваш password"
-                            type="password"
-                        />
-                    </div>
-                </div>
-                <div>
-                    <RaisedButton label="Регистрация" fullWidth={true} />
-                </div>
+                <RegistrationForm processForm={this.handleSave} />
             </Paper>
         );
     }

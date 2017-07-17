@@ -1,7 +1,12 @@
-.icon {
-
+.profile {
+  text-align: center;
 }
 
-.myCustomStyle {
+.profile-name {
+  display: inline-block;
+  margin: 0 10px;
+}
 
+.profile-logout {
+  cursor: pointer;
 }

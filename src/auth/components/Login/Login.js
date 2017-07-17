@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Paper from 'material-ui/Paper';
-import TextField from 'material-ui/TextField';
-import RaisedButton from 'material-ui/RaisedButton';
+import LoginForm from '../LoginForm/LoginForm';
 import { loginUser } from '../../actions/users';
 import './Login.css';
 
@@ -18,8 +17,7 @@ class Login extends Component {
         this.handleProcessField = this.handleProcessField.bind(this);
     }
 
-    handleSave() {
-        let form = this.state;
+    async handleSave(form) {
         let { dispatch } = this.props;
 
         dispatch(loginUser(form));
@@ -41,27 +39,7 @@ class Login extends Component {
                 <div>
                     <h3>Форма авторизации</h3>
                 </div>
-                <div>
-                    <div>
-                        <TextField
-                            className="Contact-fields"
-                            floatingLabelText="Ваш username"
-                            onChange={this.handleProcessField.bind(this, 'username')}
-                            type="text"
-                        />
-                    </div>
-                    <div>
-                        <TextField
-                            className="Contact-fields"
-                            floatingLabelText="Ваш password"
-                            onChange={this.handleProcessField.bind(this, 'password')}
-                            type="password"
-                        />
-                    </div>
-                </div>
-                <div>
-                    <RaisedButton label="Авторизация" fullWidth={true} onTouchTap={this.handleSave} />
-                </div>
+                <LoginForm processForm={this.handleSave} />
             </Paper>
         );
     }

@@ -1,5 +1,5 @@
 import parameters from '../../environment';
-import { SET_PROFILE } from '../constants/users';
+import { SET_PROFILE, LOGOUT_USER } from '../constants/users';
 
 const localStorage = window.localStorage;
 const fetch = window.fetch;
@@ -53,7 +53,18 @@ export function getProfile() {
             case 200:
                 dispatch(setUser(data));
                 break;
+
+            case 401:
+                localStorage.removeItem('token');
+                break;
         }
+    }
+}
+
+export function userLogout() {
+    return (dispatch) => {
+        localStorage.removeItem('token');
+        dispatch(logoutUser());
     }
 }
 
@@ -61,5 +72,11 @@ function setUser(profile) {
     return {
         type: SET_PROFILE,
         profile: profile
+    }
+}
+
+function logoutUser() {
+    return {
+        type: LOGOUT_USER
     }
 }
